@@ -3,6 +3,7 @@ import MyButton from './MyButton.vue';
 
 export default {
     component: MyButton,
+    decorators: [() => ({ template: '<div style="margin: 10em;"><story /></div>' })],
     parameters: {
         backgrounds: {
             value: [
