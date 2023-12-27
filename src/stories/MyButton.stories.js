@@ -1,27 +1,49 @@
 import MyButton from './MyButton.vue';
 
+
 export default {
     component: MyButton,
 };
 
 export const MyPrimary = {
-    render: () => ({
+    render: (args) => ({
         name: 'I am the primary',
         components: { MyButton },
-        template: '<MyButton property label="MyButton" />',
+        setup() {
+            return {args};
+        },
+        template: '<MyButton v-bind="args" />',
     }),
+    args: {
+        backgroundColor: '#ff0',
+    label: 'MyButton',
+    },
 };
 
 export const MySecondary = {
-    render: () => ({
+    render: (args) => ({
         components: { MyButton },
-        template: '<MyButton backgroundColor="#ff0" label="😄👍😍💯" />',
+        setup() {
+            return { args };
+        },
+        template: '<MyButton v-bind="args" />',
     }),
+    args: {
+        ...MyPrimary.args,
+        label: '😄👍😍💯',
+    },
 };
 
 export const MyTertiary = {
-    render: () => ({
+    render: (args) => ({
         components: { MyButton },
-        template: '<MyButton backgroundColor="#ff0" label="📚📕📈🤓" />',
+        setup(){
+            return {args};
+        },
+        template: '<MyButton v-bind="args" />',
     }),
+    args: {
+        ...MyPrimary.args,
+        label: '📚📕📈🤓',
+    },
 };

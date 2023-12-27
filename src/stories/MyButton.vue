@@ -3,10 +3,10 @@
 </template>
 
 <script>
-// import {computed, reactive} from "vue";
+import {computed, reactive} from "vue";
 
 export default {
-  name: 'button',
+  name: 'button-my',
 
   props: {
     label: {
@@ -40,9 +40,9 @@ export default {
 </script>
 
 
-<style lang="scss">
-button {
-  background-color: #66bf3c;
-  font-size: 30px;
-}
-</style>
+<!--<style lang="scss">-->
+<!--button {-->
+<!--  background-color: #66bf3c;-->
+<!--  font-size: 30px;-->
+<!--}-->
+<!--</style>-->
