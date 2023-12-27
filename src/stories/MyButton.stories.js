@@ -3,6 +3,15 @@ import MyButton from './MyButton.vue';
 
 export default {
     component: MyButton,
+    parameters: {
+        backgrounds: {
+            value: [
+                {name: 'red', value: '#f00'},
+                {name: 'green', value: '#0f0'},
+                {name: 'blue', value: '#00f'},
+            ],
+        },
+    },
 };
 
 export const MyPrimary = {
