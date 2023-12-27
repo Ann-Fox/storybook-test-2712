@@ -2,14 +2,19 @@ import MyButton from './MyButton.vue';
 
 
 export default {
+    // title: "Example/Button",
     component: MyButton,
-    decorators: [() => ({ template: '<div style="margin: 10em;"><story /></div>' })],
+    tags: ["autodocs"],
+    // decorators: [() => ({ template: '<div style="margin: 10em;"><story /></div>' })],
     parameters: {
         backgrounds: {
             value: [
                 {name: 'red', value: '#f00'},
                 {name: 'green', value: '#0f0'},
                 {name: 'blue', value: '#00f'},
+                {name: 'black', value: '#000'},
+                {name: 'light', value: '#DDD'},
+                {name: 'dark', value: '#222'},
             ],
         },
     },
@@ -25,9 +30,11 @@ export const MyPrimary = {
         template: '<MyButton v-bind="args" />',
     }),
     args: {
+        primary: true,
         backgroundColor: '#ff0',
-    label: 'MyButton',
+        label: 'MyButton',
     },
+    decorators: [() => ({ template: '<div style="margin: 5em; background: antiquewhite"><story/></div>' })],
 };
 
 export const MySecondary = {
@@ -55,5 +62,6 @@ export const MyTertiary = {
     args: {
         ...MyPrimary.args,
         label: '📚📕📈🤓',
+        primary: false,
     },
 };
